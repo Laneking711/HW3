@@ -1,4 +1,4 @@
-#lane
+
 #region imports
 from numericalMethods import GPDF, Probability
 #endregion
@@ -23,6 +23,7 @@ def main():
     #region testing user input
     # setting the initial default values
     Again = True
+    prob = .45
     mean = 0
     stDev = 1.0
     c = 0.5
@@ -35,6 +36,9 @@ def main():
         # "clean the user input
         response = response.strip().lower()  # strip of leading or trailing spaces and make lower case.
         mean = float(response) if response != '' else mean
+
+        response = input(f"probability?  ({prob:0.3f})")
+        prob = float(response) if response != '' else prob
 
         response = input(f"Standard deviation? ({stDev:0.3f})").strip().lower()
         stDev = float(response) if response != '' else stDev
